@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset = 'UTF-8'>
+        <title>Testing</title>
+        <style>
+            .fix{
+                clear: both;
+            }
+            .conte{
+                background-color: #AAA;
+                position: relative;
+                overflow: hidden;
+                width: 90%;
+                margin: 20px auto;
+                padding: 10px;
+                z-index: 1;
+
+            }
+            .conte::after{
+                content: '';
+                width: 3px;
+                height: 100%;
+                background-color: #f00;
+                position:absolute;
+                left:calc(50% - 1.5px);
+                top:0;
+            }
+            .year{
+                width: fit-content;
+                padding: 3px 6px;
+                background-color:#c5144e;
+                color: #FFf;
+                border-radius: 4px;
+                font-weight: bold;
+                margin: 10px auto;
+
+            }
+            .left,.ri{
+                background-color: #FFF;
+                padding: 10px;
+                width:calc(50% - 50px);
+                position:relative;
+                margin-bottom: 30px;
+            }
+            .left{
+                float: left;
+            }
+            .ri{
+                float:right;
+            }
+            .left::before {
+                content: '';
+                border: 10px solid;
+                border-color: transparent transparent transparent #FFF;
+                position: absolute;
+                top:20px;
+                right: -20px;
+            }
+            .ri::before{
+                content: '';
+                border: 10px solid;
+                border-color: transparent #FFF transparent transparent;
+                position: absolute;
+                top:20px;
+                left:-20px;
+            }
+            .left::after{
+                content: '';
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                color:#ff0;
+                position: absolute;
+                top:20px;
+                right: -38px;
+                z-index: 3;
+                border:1px solid;
+                background-color: white;
+            }
+            .ri::after{
+                content: '';
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                color:#ff0;
+                position: absolute;
+                top:20px;
+                left: -38px;
+                z-index: 3;
+                border:1px solid;
+                background-color: white;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="conte">
+            <div class="year">2020</div>
+            <div class="left">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa natus libero rem quisquam, necessitatibus amet labore. Esse minima sapiente qui dignissimos ipsa, aspernatur voluptate voluptates minus aperiam. Laborum, aspernatur aliquam?
+            </div>
+            <div class="fix"></div>
+            <div class="ri">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa natus libero rem quisquam, necessitatibus amet labore. Esse minima sapiente qui dignissimos ipsa, aspernatur voluptate voluptates minus aperiam. Laborum, aspernatur aliquam?
+            </div>
+            <div class="fix"></div>
+            <div class="year">2020</div>
+            <div class="left">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa natus libero rem quisquam, necessitatibus amet labore. Esse minima sapiente qui dignissimos ipsa, aspernatur voluptate voluptates minus aperiam. Laborum, aspernatur aliquam?
+            </div>
+            
+        </div>
+    </body>
+</html>
